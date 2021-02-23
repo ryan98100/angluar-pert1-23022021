@@ -1,4 +1,38 @@
 <hello name="{{ name }}"></hello>
 <p>
-  Start editing to see some magic happen :)
+	Start editing to see some magic happen :)
+	<br/>
+	<br/>
+    {{"Contoh menulis di Angular"}}
+	<br/>
+  25+25={{25+25}}
+	<br/>
+	<input [(ngModel)]="a" type="text"/> * <input [(ngModel)]="b" type="text"/> = {{a*b}}
+	<br/>
+  {{ item.nama}} - {{item.harga | currency:'Rp'}}
+	<br/>
 </p>
+
+	<div *ngFor="let duit of crypto; let i = index">
+		{{i+1}}. {{duit.nama}} - {{duit.harga | currency:'Rp'}}
+	</div>
+
+	<div *ngFor="let data of itemArr">
+		{{data}}
+	</div>
+	<p *ngIf="tampil"> True = Tampil </p>
+	<br/>
+
+	<ng-template *ngIf="tampil;then A;else B"> </ng-template>
+	<ng-template #A>
+		<p> WEH TRUE </p>
+	</ng-template>
+	<ng-template #B>
+		<p> WEH F </p>
+	</ng-template>
+
+	<div>
+		<button (click)="OPEN()">Buka</button>{{pesan}}
+    <br/>
+    <input (keyup) ="onKey($event)"/><p>{{value}}</p>
+	</div>
